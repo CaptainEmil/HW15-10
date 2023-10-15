@@ -2,17 +2,28 @@
 
 console.clear();
 
-const arr = [1, 2, 3, 4, 5];
-const element='start';
-let tempArr=[];
+const arrInObj = [];
+const arrNotInObj = [];
+const obj={
+    name:'Emil',
+    surname:'Mirza',
+    age: 13,
+    university:'ADA',
+    game:'Sea Of Thieves'
+};
+let field;
 
 
-for(let i=0;i<arr.length;++i){
-    tempArr[i+1]=arr[i];
+
+for(let i=0;i<=10;++i){
+    field=prompt('Enter the field');
+    if(Object.hasOwn(obj,field)){
+        arrInObj.push(field);
+    }
+    else{
+        arrNotInObj.push(field);
+    }
 }
 
-tempArr[0]=element;
-
-tempArr.map((x,i)=>arr[i]=x);
-
-console.log(arr);
+console.log(`arr in obj: ${arrInObj}`);
+console.log(`arr not in obj: ${arrNotInObj}`);
